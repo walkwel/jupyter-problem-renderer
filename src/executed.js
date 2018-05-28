@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Collapse from 'material-ui/transitions/Collapse';
 import IconButton from 'material-ui/IconButton';
@@ -10,7 +9,6 @@ import ExpandLessIcon from 'material-ui-icons/ExpandLess';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
 import NotebookPreview from '@nteract/notebook-preview';
-import Executed from './executed';
 
 class JupyterProblem extends React.PureComponent {
   state = {
@@ -22,7 +20,7 @@ class JupyterProblem extends React.PureComponent {
   };
 
   loadProblem = () => {
-    this.setState({ problemJson: <NotebookPreview notebook={window.problemJsonFile} /> });
+    this.setState({ problemJson: <NotebookPreview notebook={window.problem} /> });
   };
 
   render() {
@@ -57,5 +55,4 @@ class JupyterProblem extends React.PureComponent {
   }
 }
 
-ReactDOM.render(<JupyterProblem />, document.getElementById('root'));
-ReactDOM.render(<Executed />, document.getElementById('root1'));
+export default JupyterProblem;
